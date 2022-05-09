@@ -1,11 +1,10 @@
-import Merchant from '../models/Merchant';
+import Merchant from '../models/Merchant.js';
 
 export const updateBalance = async (req, res) => {
 	try {
+		const updatedMerchant = await Merchant.findByIdAndUpdate();
 
-    const updatedMerchant = await Merchant.findOneAndUpdate
-
-		res.json({ success: true, newBalance: closestShops });
+		res.json({ success: true, updatedMerchant });
 	} catch (err) {
 		console.log(err);
 		res.status(400).json({ error: err });

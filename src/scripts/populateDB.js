@@ -3,8 +3,8 @@ import { faker } from '@faker-js/faker';
 import dotenv from 'dotenv';
 
 dotenv.config();
-import Shop from '../models/Shop.js';
-import Merchant from '../models/Merchant.js';
+import Shop from '../models/Shop';
+import Merchant from '../models/Merchant';
 
 const db = process.env.MONGODB_URI;
 

@@ -1,4 +1,4 @@
-import Shop from '../models/Shop.js';
+import Shop from '../models/Shop';
 
 export const list = async (req, res) => {
 	const {
@@ -15,7 +15,7 @@ export const list = async (req, res) => {
 			},
 		]).limit(10);
 
-		// use https://github.com/googlemaps/google-maps-services-js 
+		// use https://github.com/googlemaps/google-maps-services-js
 		// for distance by car, walking, or transport
 		// also need an api key
 

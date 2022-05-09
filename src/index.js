@@ -3,9 +3,9 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import passport from 'passport';
 import dotenv from 'dotenv';
-import passportConfig from './config/passport.js';
+import passportConfig from './config/passport';
 
-import router from './routes/index.js';
+import router from './routes/index';
 
 dotenv.config();
 

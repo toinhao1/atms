@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import passport from 'passport';
 
-import { list } from '../controllers/shops.js';
+import { list } from '../controllers/shops';
 
 const shopRouter = Router();
 
