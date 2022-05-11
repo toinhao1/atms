@@ -20,6 +20,7 @@ const UserSchema = new Schema({
 		required: true,
 		trim: true,
 	},
+	// should be sent in the request
 	currentLat: {
 		type: String,
 	},

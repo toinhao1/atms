@@ -32,16 +32,16 @@ export const register = async (req, res) => {
 };
 
 export const login = async (req, res) => {
+	const jwtSecret = process.env.JWT_SECRET;
+
 	const { email, password } = req.body;
 
 	// Find user by email
 	User.findOne({ email }).then((user) => {
-
 		// Check for user
 		if (!user) {
 			return res.status(404).json('User not found');
 		}
-
 		//Check Password
 		bcrypt.compare(password, user.password).then((isMatch) => {
 			if (isMatch) {
@@ -49,7 +49,7 @@ export const login = async (req, res) => {
 				const payload = { id: user.id, name: user.name }; // Create Jwt payload
 
 				// Sign Token
-				jwt.sign(payload, 'thisismynewapp', { expiresIn: 36000 }, (err, token) => {
+				jwt.sign(payload, jwtSecret, { expiresIn: 36000 }, (err, token) => {
 					res.json({
 						success: true,
 						token: 'Bearer ' + token,
