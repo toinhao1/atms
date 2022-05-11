@@ -21,8 +21,6 @@ export const list = async (req, res) => {
 
 		res.json({ success: true, list: closestShops });
 	} catch (err) {
-		console.log(err);
 		res.status(400).json({ error: err });
-		throw new Error(err);
 	}
 };
